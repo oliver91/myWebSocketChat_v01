@@ -1,0 +1,37 @@
+@(user: User)
+
+@main(user) {
+
+    <h1>Home Page</h1>
+    <div class="login">
+        <dl id="user">
+            <a href="###"> <dt>@user.name <span>(@user.email)</span></dt></a>
+            <dd>
+                <a href="@routes.Application.logout()">Logout</a>
+            </dd>
+        </dl>
+    </div>
+
+
+    <div id="chatBoard"  data-bind="foreach: messages, visible: messages().length > 0">
+        <div class="message" data-bind="style: {background: color}">
+            @*<span class="pre">&GT;</span> <span class="date" data-bind="text: timeStamp"></span>*@
+            <span class="pre">user: @user.name</span> <span class="date" data-bind="text: timeStamp"></span>
+            <p><span data-bind="html: message"></span></p>
+        </div>
+    </div>
+
+
+
+    @*<div id="errorMessage" class="fatal" data-bind="fadeVisible: showErrorMessage">Sorry, but connection to websocket failed. You are probably behind a proxy of some sort.</div>*@
+    @*<div id="disconnectMessage" class="fatal" data-bind="fadeVisible: showDisconnectMessage">Disconnected from socket. <a href="javascript: window.location.reload();">Reconnect</a>?</div>*@
+
+} {
+
+    <!-- INPUT FORM -->
+    <div id="inputForm">
+        <label for="newMessage">Enter message</label>
+        <textarea id="newMessage" cols="80" rows="3" data-bind="valueUpdate: 'keyup', event: { keyup: check }"> </textarea>
+    </div>
+
+}

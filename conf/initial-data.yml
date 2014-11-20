@@ -1,0 +1,30 @@
+
+- &bob !!models.User
+    email:          bob@gmail.com
+    name:           Bob
+    password:       secret
+    userType:       3
+    id:             1
+
+- &cookie !!models.User
+    email:          cookie@gmail.com
+    name:           Cookie
+    password:       secret
+    userType:       2
+    id:             2
+
+
+- &jeff !!models.User
+    email:          jeff@gmail.com
+    name:           Jeff
+    password:       secret
+    userType:       2
+    id:             3
+
+
+- &paul !!models.User
+    email:          paul@gmail.com
+    name:           Paul
+    password:       secret
+    userType:       2
+    id:             4
